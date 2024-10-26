@@ -30,7 +30,7 @@ public class MovingPuzzles : MonoBehaviour
         move = false;
 
         if(Mathf.Abs(transform.localPosition.x - form.transform.localPosition.x)<=30f&&
-            Mathf.Abs(transform.localPosition.y - form.transform.localPosition.y) <= 30f)
+            Mathf.Abs(transform.localPosition.y - form.transform.localPosition.y) <= 30f && !finish)
         {
             transform.position = new Vector2(form.transform.position.x, form.transform.position.y);
             finish = true;
