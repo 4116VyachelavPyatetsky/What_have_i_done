@@ -18,11 +18,17 @@ public class AnimatorController : MonoBehaviour
 
     bool text_shown = false;
 
+    public static bool Shown_start_message = false;
+
 
     private bool isanimating = false;
     private void Start()
     {
-        transform.GetComponent<Animator>().SetTrigger("Pereh");
+
+        if (!Shown_start_message)
+        {
+            transform.GetComponent<Animator>().SetTrigger("Pereh");
+        }
     }
 
     private void Update()
@@ -38,6 +44,10 @@ public class AnimatorController : MonoBehaviour
             if (text_shown) {
                 transform.GetComponent<Animator>().SetTrigger("Pereh");
                 text_shown = false;
+                if (!Shown_start_message)
+                {
+                    Shown_start_message = true;
+                }
             }
             else
             {

@@ -10,6 +10,9 @@ public class Pyatnaski_main : MonoBehaviour
     public float size = 160f;
     public GameObject[] parts;
 
+    public GameObject seif;
+    public GameObject key;
+
     int[,] matrix_right = {
             { 1, 2, 3 },
             { 4, 5, 6 },
@@ -70,12 +73,15 @@ public class Pyatnaski_main : MonoBehaviour
 
     void Change_plitku(int row,int col,int num)
     {
-        transform.GetChild(num - 1).localPosition = new Vector3(size * (col - 1), size * -(row - 1), 0);
+        transform.GetChild(num).localPosition = new Vector3(size * (col - 1), size * -(row - 1), 0);
     }
 
     void End()
     {
-        Debug.Log("hahah");
+        Instantiate(key, transform.parent);
+        Scripte_for_min_znach.found_key_in_seif = true;
+        seif.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public bool AreMatricesEqual()

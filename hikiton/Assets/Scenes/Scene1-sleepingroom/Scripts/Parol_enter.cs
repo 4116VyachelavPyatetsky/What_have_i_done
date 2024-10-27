@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Parol_enter : MonoBehaviour
 {
-    private string right_str = "7519455";
+    private string right_str = "2358";
     private string real_str = "";
-    public GameObject text;
-
+    //public GameObject text;
+    [SerializeField] private TextMeshProUGUI message;
+    public GameObject Seif_Open;
+    public GameObject Main_Open;
 
     public void Start()
     {
@@ -25,12 +28,8 @@ public class Parol_enter : MonoBehaviour
 
     void ChangeText()
     {
-        string star_text = real_str;
-        for (int i = 0; i < right_str.Length - real_str.Length; i++) 
-        {
-            star_text += "*"; 
-        }
-        text.GetComponent<Text>().text = star_text;
+        //text.GetComponent<Text>().text = star_text;
+        message.text = real_str;
     }
 
     public void Delete_code()
@@ -46,7 +45,7 @@ public class Parol_enter : MonoBehaviour
     }
     void End()
     {
-        real_str = "Complete";
-        ChangeText();
+        Seif_Open.SetActive(true);
+        Main_Open.SetActive(false);
     }
 }

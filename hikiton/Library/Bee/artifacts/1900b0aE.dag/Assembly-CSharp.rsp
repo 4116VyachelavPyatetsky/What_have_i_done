@@ -397,6 +397,8 @@
 "Assets/Scenes/Scene1-sleepingroom/Scripts/Symbol_code.cs"
 "Assets/Scenes/Scene1-sleepingroom/Scripts/WinConditionPuzzle.cs"
 "Assets/Scenes/Scene2-kitchen/Scripts/Bomb_explosion_perehod.cs"
+"Assets/Scenes/Scene2-kitchen/Scripts/Is_key.cs"
+"Assets/Scenes/Scripte_for_min_znach.cs"
 -langversion:9.0
 /deterministic
 /optimize+
